@@ -1,6 +1,6 @@
 {
   "name": "react-slot-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern, next-gen React utilities for composing slots and props",
   "repository": {
     "type": "git",
@@ -49,5 +49,9 @@
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
-  }
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
 }
