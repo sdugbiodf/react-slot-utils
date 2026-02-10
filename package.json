@@ -1,0 +1,53 @@
+{
+  "name": "react-slot-utils",
+  "version": "1.0.0",
+  "description": "Modern, next-gen React utilities for composing slots and props",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyeongkim/react-slot-utils.git"
+  },
+  "keywords": [
+    "react",
+    "slot",
+    "slots",
+    "props",
+    "prop-composition",
+    "headless",
+    "compound-components",
+    "hoc",
+    "ui-architecture",
+    "design-system",
+    "next-gen"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "bun run typecheck && bun run check:write && tsdown",
+    "check": "biome check",
+    "check:write": "biome check --write",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "peerDependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.14",
+    "@types/bun": "latest",
+    "@types/react": "^19.2.13",
+    "tsdown": "^0.20.3"
+  },
+  "author": {
+    "name": "Taeyeong Kim",
+    "email": "contact@tyeongk.im",
+    "url": "https://github.com/tyeongkim"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  }
+}
